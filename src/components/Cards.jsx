@@ -1,15 +1,16 @@
 import React from "react";
-import { Button} from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import Colores from "./Colores";
 
-const Cards = () => {
+const Cards = ({listaColores, borrarColor}) => {
   return (
-    <div className="col-md-3">
-      <div
-        style={{ background: "blue", width: "100px", height: "100px", borderRadius: "10px"}}></div>
-      <Button variant="danger my-1" style={{ width: "100px", height: "40px" }}>
-        Borrar
-      </Button>
-    </div>
+    <>
+    <Col md={12}>
+     {
+     listaColores.map((colores, posicion)=> <Colores key={posicion} nombreColor={colores} borrarColor = {borrarColor}></Colores>)
+     }
+    </Col>
+    </>
   );
 };
 

@@ -1,16 +1,26 @@
-import React, { useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Form, Button, Container, Row } from "react-bootstrap";
 import Cards from "./Cards";
 
 const FormColores = () => {
+  const arregloLocalStorage = JSON.parse(localStorage.getItem("listaColoresKey")) || [];
   const [colores, setColores] = useState("");
-  const [listaColores, setListaColores] = useState([]);
+  const [listaColores, setListaColores] = useState(arregloLocalStorage);
+
+  useEffect(() => {
+    localStorage.setItem("listaColoresKey", JSON.stringify(listaColores))}, [listaColores]);
+  
 
   const arregloColores = (e) => {
     e.preventDefault();
     setListaColores([...listaColores, colores]);
-    setColores("");
+    setColores(""); 
   };
+
+  const borrarColor = (color)=>{
+    let copiaColores = listaColores.filter((colorBorrado)=> colorBorrado !== color);
+    setListaColores(copiaColores);
+  }
 
   return (
     <>
@@ -30,9 +40,9 @@ const FormColores = () => {
             </Button>
           </Form.Group>
         </Form>
-        <div className="row">
-          <Cards></Cards>
-        </div>
+        <Row>
+          <Cards listaColores = {listaColores} borrarColor = {borrarColor}></Cards>
+        </Row>
       </Container>
     </>
   );

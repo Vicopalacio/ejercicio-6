@@ -1,21 +1,15 @@
 import React from "react";
-import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 
 const Cards = () => {
   return (
-    <>
-      <Container>
-        <Row>
-          <Col xs={6} md={3}>
-            <Card style={{ background: "blue", width: "100px", height: "100px"}}>
-              <Card.Body>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-        <Button variant="outline-danger my-3">Borrar</Button>
-      </Container>
-    </>
+    <div className="col-md-3">
+      <div
+        style={{ background: "blue", width: "100px", height: "100px", borderRadius: "10px"}}></div>
+      <Button variant="danger my-1" style={{ width: "100px", height: "40px" }}>
+        Borrar
+      </Button>
+    </div>
   );
 };
 

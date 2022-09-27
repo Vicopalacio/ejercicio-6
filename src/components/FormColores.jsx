@@ -9,7 +9,7 @@ const FormColores = () => {
         <Form.Group className="mb-3 d-flex" controlId="formBasicColor">
           <div className="colores mx-1" style={{ background: "blue" }}></div>
           <Form.Control type="text" placeholder="Ingrese un color" />
-          <Button variant="outline-warning" type="submit">
+          <Button variant="outline-warning mx-1" type="submit">
             Agregar
           </Button>
         </Form.Group>

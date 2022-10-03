@@ -4,7 +4,7 @@ Lista de colores realizadas con React, practicamos el uso de props, state, compo
 
 ## Demo del proyecto
 
-Proba la demo de la lista de tareas del siguiente link: [Demo lista tareas]()
+Proba la demo de la lista de tareas del siguiente link: [Demo lista tareas](https://animated-kitsune-8a66b3.netlify.app/)
 
 ## Pasos para probar el proyecto
 
